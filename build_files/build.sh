@@ -24,7 +24,7 @@ dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 
-dnf6 install -y nodejs
+dnf5 install -y nodejs
 
 # Use a COPR Example:
 #
