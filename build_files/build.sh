@@ -9,7 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-sh -c 'echo -e "[unityhub-beta]\nname=Unity Hub Beta\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/unstable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/unstable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub_beta.repo'
+wget https://installers.privateinternetaccess.com/download/pia-linux-3.7-08412.run
+
 
 dnf5 -y install dnf-plugins-core
 dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
@@ -21,7 +22,12 @@ dnf5 install -y code
 dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 dnf5 install -y nodejs
-dnf5 install -y unityhub
+
+chmod +x pia-linux-3.7-08412.run
+
+./pia-linux-3.7-08412.run
+
+rm pia-linux-3.7-08412.run
 
 # Use a COPR Example:
 #
