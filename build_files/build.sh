@@ -25,7 +25,7 @@ dnf5 install -y nodejs
 
 chmod +x pia-linux-3.7-08412.run
 
-./pia-linux-3.7-08412.run
+#./pia-linux-3.7-08412.run
 
 rm pia-linux-3.7-08412.run
 
